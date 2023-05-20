@@ -9,7 +9,7 @@ const Layout = ({ children }) => {
       <div className="flex px-7">
         <Sidebar />
         <aside className="grow m-5 ml-0 rounded-xl" aria-label="Sidebar">
-        <div className="overflow-y-auto scrollbar-hide py-4 px-3 bg-violet-300 dark:bg-violet-800 h-screen m-3 rounded-xl">
+        <div className="overflow-y-auto scrollbar-hide py-4 px-3 bg-gray-300  h-screen m-3 rounded-xl">
           {children}
         </div>
         </aside>

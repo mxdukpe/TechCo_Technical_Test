@@ -1,5 +1,5 @@
 import { Link} from "react-router-dom";
-import logo from "../image/BatKawaii.png";
+import logo from "../image/yinyang.png";
 
 function NavBar() {
     return (
@@ -7,7 +7,7 @@ function NavBar() {
             <nav className="z-0 relative p-4"
                 x-data="{open:false,menu:false, lokasi:false}"
             >
-                <div className="flex bg-emerald-100 rounded-lg text-end p-4">
+                <div className="flex bg-gray-300 rounded-lg text-end p-4">
                     {/* IMAGES */}
                     {/* <Link to="/mypngs"> */}
                         <img

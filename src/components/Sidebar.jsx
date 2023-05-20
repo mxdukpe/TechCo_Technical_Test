@@ -4,14 +4,14 @@ function Sidebar() {
     return (
         <>
             <aside className="flex-none w-64 m-5 " aria-label="Sidebar">
-                <div className="bg-emerald-100 rounded-lg block h-screen">
+                <div className="bg-gray-300 rounded-lg block h-screen">
 
                     {/* HOME */}
                     <ul>
                         <Link
-                            to="/home"
+                            to="/"
                             className="flex items-center p-2 text-base font-semibold text-2xl flex pt-6 rounded-lg justify-center hover:transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300">
-                            <span className="">Home</span>
+                            <span className="">User</span>
                         </Link>
                     </ul>
 

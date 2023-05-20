@@ -6,10 +6,7 @@ function Home() {
     <div className="Home">
       <Layout>
 
-        {/* TRYING ANIMATION */}
-        <>
-
-        </>
+        <h1 className="flex justify-center text-center text-xl bold"> Bienvenu </h1>
 
       </Layout>
     </div>
