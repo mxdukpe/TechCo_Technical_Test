@@ -14,7 +14,7 @@ function Login() {
     if (pwd != pswd) {
       alert("no match")
     } else {
-        navigate('/home');
+        navigate('/');
     }
   };
 

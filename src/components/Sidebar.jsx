@@ -3,7 +3,7 @@ import { Link} from "react-router-dom";
 function Sidebar() {
     return (
         <>
-            <aside className="flex-none w-64 m-5 " aria-label="Sidebar">
+            <aside className="flex-none w-36 m-5 " aria-label="Sidebar">
                 <div className="bg-gray-300 rounded-lg block h-screen">
 
                     {/* HOME */}
