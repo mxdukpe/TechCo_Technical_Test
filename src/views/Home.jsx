@@ -4,6 +4,8 @@ import meditation from "../image/meditation.jpeg";
 import { Link} from "react-router-dom";
 import "./Home.css";
 
+
+
 function Home() {
   return (
     <div className="Home h-screen">
