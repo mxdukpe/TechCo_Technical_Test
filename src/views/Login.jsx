@@ -1,125 +1,92 @@
+import React from "react";
+import logo from '../image/logo.png';
+import girl from '../image/girl.png'
 import { useNavigate } from "react-router-dom";
-import React, { useState } from "react";
-import { Link} from "react-router-dom";
 
-function Login() {
+const Login = () => {
   let navigate = useNavigate();
 
-  // FONCTION DE CONNECTION
-  const handleConnection = async (event) => {
-    event.preventDefault();
-    var pwd = document.getElementById("pwd").value;
-    var pswd = document.getElementById("pswd").value;
-
-    if (pwd != pswd) {
-      alert("no match")
-    } else {
-        navigate('/');
-    }
+  const handleConnection = () => {
+    navigate("/home");
   };
 
-  const [email, setemail] = useState();
-  const [error, seterror] = useState();
-  const regex = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+  const navigateToRegister = () => {
+    navigate("/signup");
+  };
 
-  // FONCTION DE VALIDATION DE L'EMAIL
-  const checking = (e) => {
-    e.preventDefault();
-    if (regex.test(email) === false) {
-      seterror("Invalid email");
-    } else {
-      seterror('');
-      return true;
-    }
-    setemail(e.target.value)
-  }
-
-  const handlepwd = (e) => {
-    e.preventDefault();
-    setpwd(e.target.value)
-  }
-
-  const checkingpwd = () => {
-    var pwd = document.getElementById("pwd").value;
-    var pswd = document.getElementById("pswd").value;
-    if (pwd != pswd) {
-      alert("Passwords do not match")
-    }
-  }
-
-  const [password, setpwd] = useState();
- 
   return (
-    <div className="Login bg-gradient-to-r from-violet-500 to-fuchsia-500 h-screen">
-      {/* <Layout> */}
-      {/* REGISTER & LOGIN */}
-      <div className="flex justify-center">
-        <div className="font-semibold uppercase text-violet-800 text-3xl">Login</div>
-        {/* REGISTER */}
-        <Link
-          to="/register"
-          className="font-semibold uppercase text-violet-800 text-3xl">
-          <span className="">Register</span>
-        </Link>
+    <div className="min-h-screen flex items-center justify-center bg-blue-900">
+      <div className="flex flex-col md:flex-row bg-blue-50 rounded-lg shadow-lg w-full max-w-4xl">
+        {/* Form Section */}
+        <div className="p-8 md:w-1/2">
+          <img
+            src={logo}
+            alt="TechCo Logo"
+            className="w-20 mb-6"
+          />
+          <h1 className="text-2xl font-semibold text-blue-800 mb-4">
+            Connectez-vous à votre compte
+          </h1>
+          <form>
+            <div className="mb-4">
+              <label
+                htmlFor="email"
+                className="block text-sm font-medium text-blue-700"
+              >
+                Email
+              </label>
+              <input
+                type="email"
+                id="email"
+                className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
+                placeholder="Votre email"
+              />
+            </div>
+            <div className="mb-6">
+              <label
+                htmlFor="password"
+                className="block text-sm font-medium text-blue-700"
+              >
+                Mot de passe
+              </label>
+              <input
+                type="password"
+                id="password"
+                className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
+                placeholder="Votre mot de passe"
+              />
+            </div>
+            <button onClick={(event) => handleConnection(event)}
+              type="submit"
+              className="w-full py-2 px-4 bg-blue-600 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700"
+            >
+              SE CONNECTER
+            </button>
+          </form>
+          <p className="text-center text-sm text-blue-700 mt-4">
+            Vous n’avez pas de compte ?{" "}
+            <a href="/signup" className="text-blue-500 underline">
+              Inscrivez-vous!
+            </a>
+          </p>
+          <p className="text-center text-sm text-blue-700 mt-2">
+            <a href="/" className="text-blue-500 underline">
+              Mot de passe oublié ?
+            </a>
+          </p>
+        </div>
+
+        {/* Illustration Section */}
+        <div className="hidden md:flex items-center justify-center md:w-1/2 bg-blue-100 rounded-r-lg">
+          <img
+            src={girl}
+            alt="Illustration"
+            className="w-3/4"
+          />
+        </div>
       </div>
-
-      <div className="flex justify-center">
-      <form className="bg-gray-100 rounded-lg w-5/12 h-5/6 text-center mt-16">
-        {/* EMAIL */}
-        <div className="mt-16">
-          <label className="my-6 pt-10 font-bold uppercase">E-mail</label><br />
-          <input
-            className="pt-6 w-9/12 rounded-lg text-violet-900 hover:bg-gradient-to-r from-fuchsia-500 to-violet-500 hover:text-violet-700 border-r-violet-900"
-            placeholder="email@example.com"
-            id="email"
-            name="email"
-            type="text"
-            required onChange={(e) => checking(e)}
-          />
-        </div>
-
-        {/* PASSWORD */}
-        <div className="mt-16">
-          <label className="my-6 pt-6 font-bold uppercase">Password</label><br />
-          <input
-            className="pt-6 w-9/12 rounded-lg hover:bg-gradient-to-r from-fuchsia-500 to-violet-500 hover:text-violet-700 border-r-violet-900"
-            placeholder="Enter Password"
-            id="pwd"
-            name="pwd"
-            type="password"
-            minLength={8}
-            maxLength={16}
-            required onChange={(e) => handlepwd(e)}
-          />
-        </div>
-
-        {/* CONFIRM PASSWORD */}
-        <div className="mt-16">
-          <label className="my-6 pt-6 font-bold uppercase">Confirm Password</label><br />
-          <input
-            className="pt-6 w-9/12 rounded-lg hover:bg-gradient-to-r from-fuchsia-500 to-violet-500 hover:text-violet-700 border-r-violet-900"
-            id="pswd"
-            name="pswd"
-            type="password"
-            placeholder="Confirm Password"
-            minLength={8}
-            maxLength={16}
-          />
-        </div>
-
-        {/* BUTTON */}
-        <div className="mt-16">
-          <button
-            className="font-bold bg-violet-500 w-32 p-4 rounded-lg hover:bg-gradient-to-r from-violet-800 to-purple-800 uppercase"
-            onClick={(event) => handleConnection(event)}
-          >
-            Submit</button>
-        </div>
-      </form>
-      </div>
-      {/* </Layout> */}
     </div>
   );
-}
+};
 
 export default Login;
