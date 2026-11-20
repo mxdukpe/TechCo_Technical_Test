@@ -1,3 +1,7 @@
+<p align="center">
+  <img src=".github/banner.png" alt="TechCo — annuaire des employés (test technique)" width="100%">
+</p>
+
 # Getting Started with Create React App
 
 This project was implemented with REACTJS and TailwindCSS.
